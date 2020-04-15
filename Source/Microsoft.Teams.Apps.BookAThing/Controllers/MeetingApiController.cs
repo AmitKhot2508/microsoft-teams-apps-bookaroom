@@ -295,7 +295,7 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                         {
                             Label = searchResult.RoomName,
                             Value = searchResult.RowKey,
-                            Sublabel = searchResult.BuildingName,
+                            Sublabel = searchResult.BuildingName + " | " + searchResult.Capacity + " | " + searchResult.FloorNumber + " | " + searchResult.DisplayDevice,
                             Status = scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems == null
                                         || scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems?.Count > 0
                                         ? Strings.Unavailable
@@ -308,7 +308,7 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                         {
                             Label = searchResult.RoomName,
                             Value = searchResult.RowKey,
-                            Sublabel = searchResult.BuildingName,
+                            Sublabel = searchResult.BuildingName + " | " + searchResult.Capacity + " | " + searchResult.FloorNumber + " | " + searchResult.DisplayDevice,
                         }).ToList();
                     }
                 }
