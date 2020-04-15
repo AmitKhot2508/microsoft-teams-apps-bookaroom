@@ -295,9 +295,9 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                         {
                             Label = searchResult.RoomName,
                             Value = searchResult.RowKey,
-                            Sublabel = searchResult.BuildingName + " | " + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
-                                                                    " | " + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
-                                                                    " | " + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
+                            Sublabel = searchResult.BuildingName + " | C-" + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
+                                                                    " | F-" + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
+                                                                    " | D-" + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
                             Status = scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems == null
                                         || scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems?.Count > 0
                                         ? Strings.Unavailable
@@ -310,9 +310,9 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                         {
                             Label = searchResult.RoomName,
                             Value = searchResult.RowKey,
-                            Sublabel = searchResult.BuildingName + " | " + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
-                                                                    " | " + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
-                                                                    " | " + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
+                            Sublabel = searchResult.BuildingName + " | C-" + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
+                                                                    " | F-" + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
+                                                                    " | D-" + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
                         }).ToList();
                     }
                 }
@@ -380,7 +380,9 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                     {
                         Label = searchResult.RoomName,
                         Value = searchResult.RowKey,
-                        Sublabel = searchResult.BuildingName,
+                        Sublabel = searchResult.BuildingName + " | C-" + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
+                                                                    " | F-" + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
+                                                                    " | D-" + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
                         Status = scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems == null
                                     || scheduleResponse?.Schedules.Where(schedule => schedule.ScheduleId == searchResult.RowKey).FirstOrDefault()?.ScheduleItems?.Count > 0
                                     ? Strings.Unavailable
@@ -395,7 +397,9 @@ namespace Microsoft.Teams.Apps.BookAThing.Controllers
                     {
                         Label = searchResult.RoomName,
                         Value = searchResult.RowKey,
-                        Sublabel = searchResult.BuildingName,
+                        Sublabel = searchResult.BuildingName + " | C-" + (string.IsNullOrEmpty(searchResult.Capacity) ? "-" : searchResult.Capacity) +
+                                                                    " | F-" + (string.IsNullOrEmpty(searchResult.FloorNumber) ? "-" : searchResult.FloorNumber) +
+                                                                    " | D-" + (string.IsNullOrEmpty(searchResult.DisplayDevice) ? "-" : searchResult.DisplayDevice),
                     }).ToList();
 
                     return this.Ok(searchResults);

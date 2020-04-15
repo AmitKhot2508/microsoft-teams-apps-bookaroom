@@ -171,9 +171,9 @@ namespace Microsoft.Teams.Apps.BookAThing.Helpers
                 if (searchedRoom?.IsDeleted == false)
                 {
                     favoriteRoom.RoomName = searchedRoom.RoomName;
-                    favoriteRoom.BuildingName = searchedRoom.BuildingName + " | " + (string.IsNullOrEmpty(searchedRoom.Capacity) ? "-" : searchedRoom.Capacity) +
-                                                                            " | " + (string.IsNullOrEmpty(searchedRoom.FloorNumber) ? "-" : searchedRoom.FloorNumber) +
-                                                                            " | " + (string.IsNullOrEmpty(searchedRoom.DisplayDevice) ? "-" : searchedRoom.DisplayDevice);
+                    favoriteRoom.BuildingName = searchedRoom.BuildingName + " | C-" + (string.IsNullOrEmpty(searchedRoom.Capacity) ? "-" : searchedRoom.Capacity) +
+                                                                            " | F-" + (string.IsNullOrEmpty(searchedRoom.FloorNumber) ? "-" : searchedRoom.FloorNumber) +
+                                                                            " | D-" + (string.IsNullOrEmpty(searchedRoom.DisplayDevice) ? "-" : searchedRoom.DisplayDevice);
                     filteredFavoriteRooms.Add(favoriteRoom);
                 }
             }
