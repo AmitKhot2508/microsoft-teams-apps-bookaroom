@@ -52,6 +52,18 @@ namespace Microsoft.Teams.Apps.BookAThing.Common.Models.TableEntities
         [IsFilterable]
         public string BuildingName { get; set; }
 
+        [IsSearchable]
+        [IsFilterable]
+        public string Capacity { get; set; }
+
+        [IsSearchable]
+        [IsFilterable]
+        public int FloorNumber { get; set; }
+
+        [IsSearchable]
+        [IsFilterable]
+        public string DisplayDevice { get; set; }
+
         [IsFilterable]
         /// <summary>
         /// Gets or sets a value indicating whether room has been deleted from Exchange.
