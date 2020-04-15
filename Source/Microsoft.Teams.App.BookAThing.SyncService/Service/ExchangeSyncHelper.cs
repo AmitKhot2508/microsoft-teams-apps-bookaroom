@@ -224,9 +224,9 @@ namespace Microsoft.Teams.Apps.BookAThing.SyncService.Service
                     BuildingEmail = building.EmailAddress,
                     RoomName = room.DisplayName,
                     RoomEmail = room.EmailAddress,
-                    Capacity = room.Capacity,
-                    FloorNumber = room.FloorNumber,
-                    DisplayDevice = room.DisplayDevice,
+                    Capacity = room.Capacity ?? string.Empty,
+                    FloorNumber = room.FloorNumber != null ? Convert.ToString(room.FloorNumber) : string.Empty,
+                    DisplayDevice = room.DisplayDevice ?? string.Empty,
                     IsDeleted = false,
                 }).ToList();
 

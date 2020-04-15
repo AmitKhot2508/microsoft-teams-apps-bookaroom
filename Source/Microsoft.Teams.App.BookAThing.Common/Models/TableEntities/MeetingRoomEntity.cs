@@ -58,7 +58,7 @@ namespace Microsoft.Teams.Apps.BookAThing.Common.Models.TableEntities
 
         [IsSearchable]
         [IsFilterable]
-        public int FloorNumber { get; set; }
+        public string FloorNumber { get; set; }
 
         [IsSearchable]
         [IsFilterable]

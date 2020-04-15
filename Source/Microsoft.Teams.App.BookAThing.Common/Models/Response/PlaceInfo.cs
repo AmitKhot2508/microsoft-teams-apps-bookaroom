@@ -39,7 +39,7 @@ namespace Microsoft.Teams.App.BookAThing.Common.Models.Response
         /// Gets or sets email address associated with place.
         /// </summary>
         [JsonProperty("floorNumber")]
-        public int FloorNumber { get; set; }
+        public int? FloorNumber { get; set; }
 
         /// <summary>
         /// Gets or sets email address associated with place.
